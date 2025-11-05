@@ -1,0 +1,6 @@
+duckdb
+pandas
+pyarrow
+gdown
+python-dotenv
+streamlit

@@ -1,0 +1,15 @@
+flowchart LR
+  A[Google Drive Folder (CSVs)] -->|gdown| B[Local Raw Zone (CSV)]
+  B --> C[Curated Zone (Parquet)]
+  C --> D[DuckDB SQL (Metrics Marts)]
+  D --> E[Parquet/CSV in marts/]
+  E --> F[Streamlit Dashboard]
+
+  subgraph ETL (Local)
+  B -->|Pandas Clean/Normalize| C
+  C -->|DuckDB SQL| D
+  end
+
+  subgraph Optional Scheduler
+  G[GitHub Actions - nightly] -->|Run ETL| D
+  end
