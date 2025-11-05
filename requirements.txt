@@ -1,6 +1,5 @@
-duckdb
 pandas
+numpy
+duckdb
 pyarrow
-gdown
-python-dotenv
 streamlit
